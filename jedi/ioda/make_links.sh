@@ -11,5 +11,5 @@ else
  echo "Cannot determine where to link IODA converter script. Please manually invoke make_links.sh"
 fi
 
-ln -s ${jedi_path}/iodaconv/src/land/imsfv3_scf2ioda.py .
+ln -fs ${jedi_path}/iodaconv/src/land/imsfv3_scf2ioda.py .
 
