@@ -80,12 +80,12 @@ fi
 #Make sure test data and ioda script are in place when first using new clone/build.
 cd ${LANDDADIR}/jedi/fv3-jedi/Data
 if [ ! -d "fieldmetadata" ] && [ ! -d "fv3files" ]; then
-  ./make_links.sh
+  sh make_links.sh
 fi
 
 cd ${LANDDADIR}/jedi/ioda
 if [ ! -e "imsfv3_scf2ioda.py" ]; then
-  ./make_links.sh
+  sh make_links.sh
 fi
 
 if [[ ! -e $WORKDIR ]]; then 
