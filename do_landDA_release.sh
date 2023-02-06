@@ -401,7 +401,7 @@ fi
 NPROC_JEDI=6
 
 if [[ ! -e Data ]]; then
-    ln -s $JEDI_STATICDIR Data 
+    ln -sf $JEDI_STATICDIR Data 
 fi
 echo 'do_landDA: calling fv3-jedi' 
 echo ${JEDI_EXECDIR}
