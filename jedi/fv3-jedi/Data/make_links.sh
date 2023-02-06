@@ -11,6 +11,6 @@ else
  echo "Cannot determine where to link fv3-jedi test data. Please manually invoke make_links.sh"
 fi
 
-ln -s ${jedi_path}/fv3-jedi/test/Data/fv3files . 
-ln -s ${jedi_path}/fv3-jedi/test/Data/fieldmetadata . 
+ln -fs ${jedi_path}/fv3-jedi/test/Data/fv3files . 
+ln -fs ${jedi_path}/fv3-jedi/test/Data/fieldmetadata . 
 
