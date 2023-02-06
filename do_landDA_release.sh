@@ -76,6 +76,18 @@ if [[ ! -e ${OUTDIR}/DA ]]; then
     mkdir ${OUTDIR}/DA/hofx
 fi 
 
+
+#Make sure test data and ioda script are in place when first using new clone/build.
+cd ${LANDDADIR}/jedi/fv3-jedi/Data
+if [ ! -d "fieldmetadata" ] && [ ! -d "fv3files" ]; then
+  sh make_links.sh
+fi
+
+cd ${LANDDADIR}/jedi/ioda
+if [ ! -e "imsfv3_scf2ioda.py" ]; then
+  sh make_links.sh
+fi
+
 if [[ ! -e $WORKDIR ]]; then 
     mkdir $WORKDIR
 fi
@@ -389,7 +401,7 @@ fi
 NPROC_JEDI=6
 
 if [[ ! -e Data ]]; then
-    ln -s $JEDI_STATICDIR Data 
+    ln -fs $JEDI_STATICDIR Data 
 fi
 echo 'do_landDA: calling fv3-jedi' 
 echo ${JEDI_EXECDIR}
